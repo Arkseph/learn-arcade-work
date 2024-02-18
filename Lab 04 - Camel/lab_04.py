@@ -19,8 +19,6 @@ def main():
     natives_distance = -16
     canteen_drinks = 3
 
-    # The natives are 10 miles behind you.
-
     done = False
     while not done:
         menu()
