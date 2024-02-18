@@ -14,9 +14,9 @@ def main():
     print("desert trek and out run the natives.")
 
     miles_traveled = 0
-    thirst = 0
+    thirst = 1
     camel_tiredness = 0
-    natives_distance = -20
+    natives_distance = -16
     canteen_drinks = 3
 
     # The natives are 10 miles behind you.
@@ -60,43 +60,45 @@ def main():
             if canteen_drinks > 0:
                canteen_drinks -= 1
                thirst = 0
-               print("You drank from your canteen.")
+               print("You drank some fresh water from your canteen.")
             else:
-               print("Your canteen is empty.")
+               print("Oh boy! Your canteen is empty.")
 
         else:                          # Error
             print("Invalid choice.")
 
         if not done and 4 < thirst <= 6:                  # Thirst
-            print("You are thirsty.")
+            print("You are thirsty. Drink some water!")
         elif thirst > 6:
             print("You died of thirst!")
             done = True
 
         if not done and 5 < camel_tiredness >= 8:             # Camel tiredness
-            print("Your camel is getting tired.")
+            print("Your camel is getting tired. Let him have some rest!")
         elif not done and camel_tiredness > 8:
-            print("Your camel is dead.")
+            print("Nooooo!!! Your camel is dead.")
             done = True
 
         if natives_distance >= miles_traveled:     # Natives
             print("The natives caught you!")
+            print("Shortly afterward, you were sentenced to feed their camels for the rest of your days.")
             done = True
         elif natives_distance >= miles_traveled - 15:
-            print("The natives are getting close! ")
+            print("The natives are getting close! Hurry up!!! ")
 
-        elif miles_traveled >= 200:      # Win
+        elif miles_traveled >= 200:                # Win condition
             print("Congratulations! You won the game and a camel!")
             done = True
 
-        if user_choice == 'B' and random.randrange(1, 21) == 7:  # Oasis
-            drinks_in_canteen = 3
+        if user_choice == 'B' and random.randrange(1, 21) == 7:             # Oasis
+            canteen_drinks = 3
             thirst = 0
             camel_tiredness = 0
-            print("Nice, you found an oasis! Your canteen is refilled and your camel rested.")
+            print("Nice!!! You found an oasis! Your canteen is refilled and your camel rested.")
         if user_choice == 'C' and random.randrange(1, 21) == 7:
-            drinks_in_canteen = 3
+            canteen_drinks = 3
             thirst = 0
             camel_tiredness = 0
-            print("Nice, you found an oasis! Your canteen is refilled and your camel rested.")
+            print("Nice!!! You found an oasis! Your canteen is refilled and your camel rested.")
+
 main()
