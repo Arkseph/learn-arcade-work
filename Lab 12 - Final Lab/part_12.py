@@ -61,7 +61,7 @@ def main():
     room_list = []
 
     # Rooms
-    room = Room("You are in a dimly lit dungeon cell. The iron bars are cold to the touch. There is a faint light coming from the south.", south=1)
+    room = Room("You are in a dimly lit dungeon cell. The iron bars are cold to the touch. There is a faint light coming from the south", south=1)
     arcade.play_sound(cell_door)
     room_list.append(room)
 
